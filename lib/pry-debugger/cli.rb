@@ -11,5 +11,6 @@
 #
 
 require 'pry-debugger/base'
+require 'pry-debugger/before_session_hook.rb'
 require 'pry-debugger/pry_ext'
 require 'pry-debugger/commands'
