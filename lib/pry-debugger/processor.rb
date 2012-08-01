@@ -9,6 +9,7 @@ module PryDebugger
       Debugger.handler = self
       @always_enabled = false
       @delayed = Hash.new(0)
+      @binding_stack_index = 0
     end
 
     # Wrap a Pry REPL to catch navigational commands and act on them.
@@ -21,6 +22,7 @@ module PryDebugger
 
       times = (command[:times] || 1).to_i   # Command argument
       times = 1 if times <= 0
+      @binding_stack_index = command[:binding_stack_index]
 
       if [:step, :next, :finish].include? command[:action]
         @pry = command[:pry]   # Pry instance to resume after stepping
@@ -135,7 +137,7 @@ module PryDebugger
 
     # Execute until current frame returns.
     def finish
-      Debugger.current_context.stop_frame = 0
+      Debugger.current_context.stop_frame = @binding_stack_index
     end
 
     # Cleanup when debugging is stopped and execution continues.

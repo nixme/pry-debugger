@@ -205,11 +205,14 @@ module PryDebugger
 
     helpers do
       def breakout_navigation(action, times = nil)
+
+        binding_stack_index = PryStackExplorer.frame_manager(_pry_).binding_index
         _pry_.binding_stack.clear     # Clear the binding stack.
         throw :breakout_nav, {        # Break out of the REPL loop and
           :action => action,          #   signal the tracer.
           :times  =>  times,
-          :pry    => _pry_
+          :pry    => _pry_,
+          :binding_stack_index => binding_stack_index
         }
       end
 
