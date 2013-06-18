@@ -116,10 +116,12 @@ Using Pry with Rails? Check out [Jazz Hands][jazz_hands].
 Stepping through code often? Add the following shortcuts to `~/.pryrc`:
 
 ```ruby
-Pry.commands.alias_command 'c', 'continue'
-Pry.commands.alias_command 's', 'step'
-Pry.commands.alias_command 'n', 'next'
-Pry.commands.alias_command 'f', 'finish'
+if defined?(PryDebugger)
+  Pry.commands.alias_command 'c', 'continue'
+  Pry.commands.alias_command 's', 'step'
+  Pry.commands.alias_command 'n', 'next'
+  Pry.commands.alias_command 'f', 'finish'
+end
 ```
 
 
