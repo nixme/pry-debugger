@@ -149,3 +149,7 @@ file an [issue][issues]. [Project changelog][changelog].
 [pullrequests]:       https://github.com/nixme/pry-debugger/pulls
 [issues]:             https://github.com/nixme/pry-debugger/issues
 [changelog]:          https://github.com/nixme/pry-debugger/blob/master/CHANGELOG.md
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/nixme/pry-debugger/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
