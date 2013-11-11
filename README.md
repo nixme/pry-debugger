@@ -1,4 +1,4 @@
-pry-debugger
+pry-debugger [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/nixme/pry-debugger/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 ============
 
 _Fast execution control in Pry_
