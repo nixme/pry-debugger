@@ -1,3 +1,8 @@
+## 0.2.3 (2014-07-02)
+
+* Support [pry] 0.10
+
+
 ## 0.2.2 (2013-03-07)
 
 * Relaxed [debugger][debugger] dependency.
@@ -26,5 +31,6 @@
   [pry-remote 0.1.4][pry-remote] support.
 
 
+[pry]:         http://pryrepl.org/
 [pry-remote]:  https://github.com/Mon-Ouie/pry-remote
 [debugger]:    https://github.com/cldwalker/debugger
