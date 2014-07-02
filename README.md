@@ -1,3 +1,7 @@
+### Using MRI 2.0.0+? Use [**pry-byebug**][pry-byebug].
+
+* * *
+
 pry-debugger [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/nixme/pry-debugger/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 ============
 
@@ -149,3 +153,4 @@ file an [issue][issues]. [Project changelog][changelog].
 [pullrequests]:       https://github.com/nixme/pry-debugger/pulls
 [issues]:             https://github.com/nixme/pry-debugger/issues
 [changelog]:          https://github.com/nixme/pry-debugger/blob/master/CHANGELOG.md
+[pry-byebug]:         https://github.com/deivid-rodriguez/pry-byebug
