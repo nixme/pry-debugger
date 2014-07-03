@@ -35,6 +35,24 @@ optional numeric argument to step multiple lines.
 
 **continue:** Continue program execution and end the Pry session.
 
+**step-ar:** Step into arbitrary code
+
+Examples of using step-ar:
+
+```
+step-ar User.first.validate
+
+```
+and this steps you into 
+
+    class User
+      def validate
+    =>  do_something
+        ...
+      end
+    end
+    pry> 
+
 
 ## Breakpoints
 
