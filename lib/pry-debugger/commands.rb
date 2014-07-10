@@ -19,7 +19,7 @@ module PryDebugger
 
       def process
         check_file_context
-        breakout_navigation :step, args.first
+        breakout_navigation :step, :times => args.first
       end
     end
 
@@ -41,7 +41,7 @@ module PryDebugger
 
       def process
         check_file_context
-        breakout_navigation :next, args.first
+        breakout_navigation :next, :times => args.first
       end
     end
 
@@ -49,9 +49,25 @@ module PryDebugger
     create_command 'finish' do
       description 'Execute until current stack frame returns.'
 
+      banner <<-BANNER
+        Usage: finish [frame-number]
+
+        Return the current or selected stack frame.
+
+        Examples:
+
+          finish                         Return from the current frame
+          finish 2                       Return from the 2nd stack frame
+      BANNER
+
+
       def process
         check_file_context
-        breakout_navigation :finish
+
+        frame_manager = PryStackExplorer.frame_manager(_pry_)
+        binding_index = (args.first || frame_manager.binding_index).to_i
+
+        breakout_navigation :finish, :binding_index => binding_index
       end
     end
 
@@ -204,12 +220,13 @@ module PryDebugger
 
 
     helpers do
-      def breakout_navigation(action, times = nil)
+      def breakout_navigation(action, opts={})
         _pry_.binding_stack.clear     # Clear the binding stack.
         throw :breakout_nav, {        # Break out of the REPL loop and
           :action => action,          #   signal the tracer.
-          :times  =>  times,
-          :pry    => _pry_
+          :times  =>  opts[:times],
+          :pry    => _pry_,
+          :binding_index => opts[:binding_index]
         }
       end
 
