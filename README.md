@@ -117,6 +117,8 @@ Using Pry with Rails? Check out [Jazz Hands][jazz_hands].
 
 ## Tips
 
+_Note: The following aliases are natively supported since 0.2.3_
+
 Stepping through code often? Add the following shortcuts to `~/.pryrc`:
 
 ```ruby
